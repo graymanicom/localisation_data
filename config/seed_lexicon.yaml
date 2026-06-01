@@ -1,0 +1,831 @@
+entries:
+  # ============================================================
+  # INSTITUTIONS
+  # ============================================================
+
+  - surface: home affairs
+    lang: eng
+    kind: institution
+    semantic_type: identity_docs
+    local_marker: true
+  - surface: department of home affairs
+    lang: eng
+    kind: institution
+    semantic_type: identity_docs
+    local_marker: true
+  - surface: dha
+    lang: eng
+    kind: institution
+    semantic_type: identity_docs
+    local_marker: true
+  - surface: home affairs office
+    lang: eng
+    kind: institution
+    semantic_type: identity_docs
+    local_marker: true
+  - surface: home affairs branch
+    lang: eng
+    kind: institution
+    semantic_type: identity_docs
+    local_marker: true
+
+  - surface: sassa
+    lang: eng
+    kind: institution
+    semantic_type: social_grants
+    local_marker: true
+  - surface: south african social security agency
+    lang: eng
+    kind: institution
+    semantic_type: social_grants
+    local_marker: true
+  - surface: sassa office
+    lang: eng
+    kind: institution
+    semantic_type: social_grants
+    local_marker: true
+  - surface: sassa service centre
+    lang: eng
+    kind: institution
+    semantic_type: social_grants
+    local_marker: true
+  - surface: department of social development
+    lang: eng
+    kind: institution
+    semantic_type: social_grants
+    local_marker: true
+  - surface: social development
+    lang: eng
+    kind: institution
+    semantic_type: social_grants
+    local_marker: true
+  - surface: social development office
+    lang: eng
+    kind: institution
+    semantic_type: social_grants
+    local_marker: true
+
+  - surface: sars
+    lang: eng
+    kind: institution
+    semantic_type: tax
+    local_marker: true
+  - surface: south african revenue service
+    lang: eng
+    kind: institution
+    semantic_type: tax
+    local_marker: true
+  - surface: revenue service
+    lang: eng
+    kind: institution
+    semantic_type: tax
+    local_marker: false
+  - surface: sars office
+    lang: eng
+    kind: institution
+    semantic_type: tax
+    local_marker: true
+  - surface: sars branch
+    lang: eng
+    kind: institution
+    semantic_type: tax
+    local_marker: true
+
+  - surface: saps
+    lang: eng
+    kind: institution
+    semantic_type: police
+    local_marker: true
+  - surface: south african police service
+    lang: eng
+    kind: institution
+    semantic_type: police
+    local_marker: true
+  - surface: police
+    lang: eng
+    kind: institution
+    semantic_type: police
+    local_marker: false
+  - surface: police station
+    lang: eng
+    kind: institution
+    semantic_type: police
+    local_marker: false
+
+  - surface: court
+    lang: eng
+    kind: institution
+    semantic_type: justice
+    local_marker: false
+  - surface: courthouse
+    lang: eng
+    kind: institution
+    semantic_type: justice
+    local_marker: false
+  - surface: magistrate court
+    lang: eng
+    kind: institution
+    semantic_type: justice
+    local_marker: false
+  - surface: magistrates court
+    lang: eng
+    kind: institution
+    semantic_type: justice
+    local_marker: false
+  - surface: department of justice
+    lang: eng
+    kind: institution
+    semantic_type: justice
+    local_marker: true
+  - surface: department of justice and constitutional development
+    lang: eng
+    kind: institution
+    semantic_type: justice
+    local_marker: true
+
+  - surface: medical clinic
+    lang: eng
+    kind: institution
+    semantic_type: healthcare_access
+    local_marker: false
+  - surface: health clinic
+    lang: eng
+    kind: institution
+    semantic_type: healthcare_access
+    local_marker: false
+  - surface: public clinic
+    lang: eng
+    kind: institution
+    semantic_type: healthcare_access
+    local_marker: false
+  - surface: hospital
+    lang: eng
+    kind: institution
+    semantic_type: healthcare_access
+    local_marker: false
+  - surface: public hospital
+    lang: eng
+    kind: institution
+    semantic_type: healthcare_access
+    local_marker: false
+  - surface: health centre
+    lang: eng
+    kind: institution
+    semantic_type: healthcare_access
+    local_marker: false
+  - surface: community health centre
+    lang: eng
+    kind: institution
+    semantic_type: healthcare_access
+    local_marker: false
+  - surface: department of health
+    lang: eng
+    kind: institution
+    semantic_type: healthcare_access
+    local_marker: true
+  - surface: health department
+    lang: eng
+    kind: institution
+    semantic_type: healthcare_access
+    local_marker: false
+
+  - surface: school
+    lang: eng
+    kind: institution
+    semantic_type: education_access
+    local_marker: false
+  - surface: public school
+    lang: eng
+    kind: institution
+    semantic_type: education_access
+    local_marker: false
+  - surface: department of basic education
+    lang: eng
+    kind: institution
+    semantic_type: education_access
+    local_marker: true
+  - surface: basic education department
+    lang: eng
+    kind: institution
+    semantic_type: education_access
+    local_marker: false
+  - surface: department of higher education
+    lang: eng
+    kind: institution
+    semantic_type: education_access
+    local_marker: true
+  - surface: department of higher education and training
+    lang: eng
+    kind: institution
+    semantic_type: education_access
+    local_marker: true
+  - surface: tvet college
+    lang: eng
+    kind: institution
+    semantic_type: education_access
+    local_marker: true
+  - surface: university
+    lang: eng
+    kind: institution
+    semantic_type: education_access
+    local_marker: false
+
+  - surface: department of labour
+    lang: eng
+    kind: institution
+    semantic_type: labour
+    local_marker: true
+  - surface: department of employment and labour
+    lang: eng
+    kind: institution
+    semantic_type: labour
+    local_marker: true
+  - surface: labour centre
+    lang: eng
+    kind: institution
+    semantic_type: labour
+    local_marker: false
+  - surface: labour office
+    lang: eng
+    kind: institution
+    semantic_type: labour
+    local_marker: false
+  - surface: uif
+    lang: eng
+    kind: institution
+    semantic_type: labour
+    local_marker: true
+  - surface: unemployment insurance fund
+    lang: eng
+    kind: institution
+    semantic_type: labour
+    local_marker: true
+
+  - surface: municipality
+    lang: eng
+    kind: institution
+    semantic_type: local_government
+    local_marker: true
+  - surface: local municipality
+    lang: eng
+    kind: institution
+    semantic_type: local_government
+    local_marker: true
+  - surface: district municipality
+    lang: eng
+    kind: institution
+    semantic_type: local_government
+    local_marker: true
+  - surface: municipal office
+    lang: eng
+    kind: institution
+    semantic_type: local_government
+    local_marker: false
+  - surface: municipal offices
+    lang: eng
+    kind: institution
+    semantic_type: local_government
+    local_marker: false
+
+  - surface: thusong service centre
+    lang: eng
+    kind: institution
+    semantic_type: service_hub
+    local_marker: true
+  - surface: thusong centre
+    lang: eng
+    kind: institution
+    semantic_type: service_hub
+    local_marker: true
+
+  - surface: traffic department
+    lang: eng
+    kind: institution
+    semantic_type: drivers_license
+    local_marker: false
+  - surface: licensing department
+    lang: eng
+    kind: institution
+    semantic_type: drivers_license
+    local_marker: false
+  - surface: driving licence testing centre
+    lang: eng
+    kind: institution
+    semantic_type: drivers_license
+    local_marker: false
+  - surface: driving license testing centre
+    lang: eng
+    kind: institution
+    semantic_type: drivers_license
+    local_marker: false
+  - surface: dltc
+    lang: eng
+    kind: institution
+    semantic_type: drivers_license
+    local_marker: true
+
+  # ============================================================
+  # ACTIONS
+  # ============================================================
+
+  - surface: apply
+    lang: eng
+    kind: action
+    semantic_type: apply
+    local_marker: false
+  - surface: apply for
+    lang: eng
+    kind: action
+    semantic_type: apply
+    local_marker: false
+  - surface: make an application
+    lang: eng
+    kind: action
+    semantic_type: apply
+    local_marker: false
+  - surface: lodge an application
+    lang: eng
+    kind: action
+    semantic_type: apply
+    local_marker: false
+  - surface: register
+    lang: eng
+    kind: action
+    semantic_type: register
+    local_marker: false
+  - surface: submit
+    lang: eng
+    kind: action
+    semantic_type: submit
+    local_marker: false
+  - surface: receive
+    lang: eng
+    kind: action
+    semantic_type: receive
+    local_marker: false
+  - surface: collect
+    lang: eng
+    kind: action
+    semantic_type: collect
+    local_marker: false
+  - surface: visit
+    lang: eng
+    kind: action
+    semantic_type: visit
+    local_marker: false
+  - surface: go to
+    lang: eng
+    kind: action
+    semantic_type: access
+    local_marker: false
+  - surface: report
+    lang: eng
+    kind: action
+    semantic_type: report
+    local_marker: false
+  - surface: renew
+    lang: eng
+    kind: action
+    semantic_type: renew
+    local_marker: false
+  - surface: replace
+    lang: eng
+    kind: action
+    semantic_type: replace
+    local_marker: false
+  - surface: certify
+    lang: eng
+    kind: action
+    semantic_type: certify
+    local_marker: false
+  - surface: qualify
+    lang: eng
+    kind: action
+    semantic_type: eligibility
+    local_marker: false
+
+  # ============================================================
+  # DOCUMENTS
+  # ============================================================
+
+  - surface: id
+    lang: eng
+    kind: document
+    semantic_type: identity_docs
+    local_marker: false
+  - surface: id book
+    lang: eng
+    kind: document
+    semantic_type: identity_docs
+    local_marker: false
+  - surface: id document
+    lang: eng
+    kind: document
+    semantic_type: identity_docs
+    local_marker: false
+  - surface: identity document
+    lang: eng
+    kind: document
+    semantic_type: identity_docs
+    local_marker: false
+  - surface: identity card
+    lang: eng
+    kind: document
+    semantic_type: identity_docs
+    local_marker: false
+  - surface: smart id
+    lang: eng
+    kind: document
+    semantic_type: identity_docs
+    local_marker: true
+  - surface: smart id card
+    lang: eng
+    kind: document
+    semantic_type: identity_docs
+    local_marker: true
+  - surface: copy of id
+    lang: eng
+    kind: document
+    semantic_type: identity_docs
+    local_marker: false
+  - surface: copy of identity document
+    lang: eng
+    kind: document
+    semantic_type: identity_docs
+    local_marker: false
+
+  - surface: certificate
+    lang: eng
+    kind: document
+    semantic_type: certificate
+    local_marker: false
+  - surface: birth certificate
+    lang: eng
+    kind: document
+    semantic_type: birth_certificate
+    local_marker: false
+  - surface: death certificate
+    lang: eng
+    kind: document
+    semantic_type: death_certificate
+    local_marker: false
+  - surface: marriage certificate
+    lang: eng
+    kind: document
+    semantic_type: marriage_certificate
+    local_marker: false
+  - surface: medical certificate
+    lang: eng
+    kind: document
+    semantic_type: medical_certificate
+    local_marker: false
+  - surface: police clearance
+    lang: eng
+    kind: document
+    semantic_type: police_clearance
+    local_marker: false
+  - surface: police clearance certificate
+    lang: eng
+    kind: document
+    semantic_type: police_clearance
+    local_marker: false
+  - surface: tax certificate
+    lang: eng
+    kind: document
+    semantic_type: tax_certificate
+    local_marker: true
+  - surface: tax clearance certificate
+    lang: eng
+    kind: document
+    semantic_type: tax_certificate
+    local_marker: true
+
+  - surface: permit
+    lang: eng
+    kind: document
+    semantic_type: permit
+    local_marker: false
+  - surface: work permit
+    lang: eng
+    kind: document
+    semantic_type: work_permit
+    local_marker: false
+  - surface: study permit
+    lang: eng
+    kind: document
+    semantic_type: study_permit
+    local_marker: false
+  - surface: residence permit
+    lang: eng
+    kind: document
+    semantic_type: residence_permit
+    local_marker: false
+
+  - surface: passport
+    lang: eng
+    kind: document
+    semantic_type: passport
+    local_marker: false
+
+  - surface: driver's license
+    lang: eng
+    kind: document
+    semantic_type: drivers_license
+    local_marker: false
+  - surface: driver license
+    lang: eng
+    kind: document
+    semantic_type: drivers_license
+    local_marker: false
+  - surface: driving license
+    lang: eng
+    kind: document
+    semantic_type: drivers_license
+    local_marker: false
+  - surface: driver's licence
+    lang: eng
+    kind: document
+    semantic_type: drivers_license
+    local_marker: false
+  - surface: driver licence
+    lang: eng
+    kind: document
+    semantic_type: drivers_license
+    local_marker: false
+  - surface: driving licence
+    lang: eng
+    kind: document
+    semantic_type: drivers_license
+    local_marker: false
+  - surface: licence
+    lang: eng
+    kind: document
+    semantic_type: drivers_license
+    local_marker: false
+  - surface: license
+    lang: eng
+    kind: document
+    semantic_type: drivers_license
+    local_marker: false
+
+  - surface: proof of residence
+    lang: eng
+    kind: document
+    semantic_type: proof_of_residence
+    local_marker: false
+  - surface: proof of address
+    lang: eng
+    kind: document
+    semantic_type: proof_of_residence
+    local_marker: false
+  - surface: application
+    lang: eng
+    kind: document
+    semantic_type: application_form
+    local_marker: false
+  - surface: application form
+    lang: eng
+    kind: document
+    semantic_type: application_form
+    local_marker: false
+  - surface: registration form
+    lang: eng
+    kind: document
+    semantic_type: registration_form
+    local_marker: false
+  - surface: affidavit
+    lang: eng
+    kind: document
+    semantic_type: affidavit
+    local_marker: false
+  - surface: certified copy
+    lang: eng
+    kind: document
+    semantic_type: certified_copy
+    local_marker: false
+
+  - surface: grant
+    lang: eng
+    kind: document
+    semantic_type: social_grants
+    local_marker: false
+  - surface: social grant
+    lang: eng
+    kind: document
+    semantic_type: social_grants
+    local_marker: true
+  - surface: grant application
+    lang: eng
+    kind: document
+    semantic_type: grant_application
+    local_marker: true
+  - surface: tax number
+    lang: eng
+    kind: document
+    semantic_type: tax_number
+    local_marker: true
+  - surface: income tax number
+    lang: eng
+    kind: document
+    semantic_type: tax_number
+    local_marker: true
+  - surface: bank statement
+    lang: eng
+    kind: document
+    semantic_type: bank_statement
+    local_marker: false
+  - surface: proof of income
+    lang: eng
+    kind: document
+    semantic_type: proof_of_income
+    local_marker: false
+  - surface: payslip
+    lang: eng
+    kind: document
+    semantic_type: proof_of_income
+    local_marker: false
+  - surface: school report
+    lang: eng
+    kind: document
+    semantic_type: school_report
+    local_marker: false
+  - surface: report card
+    lang: eng
+    kind: document
+    semantic_type: school_report
+    local_marker: false
+
+  # ============================================================
+  # ARGUMENTS / ROLES
+  # ============================================================
+
+  - surface: applicant
+    lang: eng
+    kind: argument
+    semantic_type: applicant
+    local_marker: false
+  - surface: learner
+    lang: eng
+    kind: argument
+    semantic_type: learner
+    local_marker: false
+  - surface: patient
+    lang: eng
+    kind: argument
+    semantic_type: patient
+    local_marker: false
+  - surface: beneficiary
+    lang: eng
+    kind: argument
+    semantic_type: beneficiary
+    local_marker: false
+  - surface: resident
+    lang: eng
+    kind: argument
+    semantic_type: resident
+    local_marker: false
+  - surface: taxpayer
+    lang: eng
+    kind: argument
+    semantic_type: taxpayer
+    local_marker: false
+  - surface: driver
+    lang: eng
+    kind: argument
+    semantic_type: driver
+    local_marker: false
+  - surface: citizen
+    lang: eng
+    kind: argument
+    semantic_type: citizen
+    local_marker: false
+  - surface: parent
+    lang: eng
+    kind: argument
+    semantic_type: parent
+    local_marker: false
+  - surface: guardian
+    lang: eng
+    kind: argument
+    semantic_type: guardian
+    local_marker: false
+
+  # ============================================================
+  # ACCESS FRAMES
+  # ============================================================
+
+  - surface: at
+    lang: eng
+    kind: access_frame
+    semantic_type: locative
+    local_marker: false
+  - surface: office
+    lang: eng
+    kind: access_frame
+    semantic_type: locative
+    local_marker: false
+  - surface: branch
+    lang: eng
+    kind: access_frame
+    semantic_type: locative
+    local_marker: false
+  - surface: centre
+    lang: eng
+    kind: access_frame
+    semantic_type: locative
+    local_marker: false
+  - surface: center
+    lang: eng
+    kind: access_frame
+    semantic_type: locative
+    local_marker: false
+  - surface: service centre
+    lang: eng
+    kind: access_frame
+    semantic_type: locative
+    local_marker: false
+  - surface: counter
+    lang: eng
+    kind: access_frame
+    semantic_type: locative
+    local_marker: false
+  - surface: nearest office
+    lang: eng
+    kind: access_frame
+    semantic_type: locative
+    local_marker: false
+  - surface: nearest branch
+    lang: eng
+    kind: access_frame
+    semantic_type: locative
+    local_marker: false
+
+  # ============================================================
+  # LOCALITIES
+  # ============================================================
+
+  - surface: gauteng
+    lang: eng
+    kind: locality
+    semantic_type: province
+    local_marker: true
+  - surface: limpopo
+    lang: eng
+    kind: locality
+    semantic_type: province
+    local_marker: true
+  - surface: eastern cape
+    lang: eng
+    kind: locality
+    semantic_type: province
+    local_marker: true
+  - surface: kwazulu-natal
+    lang: eng
+    kind: locality
+    semantic_type: province
+    local_marker: true
+  - surface: kzn
+    lang: eng
+    kind: locality
+    semantic_type: province
+    local_marker: true
+  - surface: western cape
+    lang: eng
+    kind: locality
+    semantic_type: province
+    local_marker: true
+  - surface: free state
+    lang: eng
+    kind: locality
+    semantic_type: province
+    local_marker: true
+  - surface: north west
+    lang: eng
+    kind: locality
+    semantic_type: province
+    local_marker: true
+  - surface: mpumalanga
+    lang: eng
+    kind: locality
+    semantic_type: province
+    local_marker: true
+  - surface: northern cape
+    lang: eng
+    kind: locality
+    semantic_type: province
+    local_marker: true
+  - surface: south africa
+    lang: eng
+    kind: locality
+    semantic_type: country
+    local_marker: true
+  - surface: local municipality
+    lang: eng
+    kind: locality
+    semantic_type: municipality
+    local_marker: true
+  - surface: district municipality
+    lang: eng
+    kind: locality
+    semantic_type: municipality
+    local_marker: true

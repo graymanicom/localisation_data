@@ -1,0 +1,11 @@
+stopword_files:
+  afr: /mnt/data/stopwords/afr.txt
+  nbl: /mnt/data/stopwords/nbl.txt
+  nso: /mnt/data/stopwords/nso.txt
+  sot: /mnt/data/stopwords/sot.txt
+  ssw: /mnt/data/stopwords/ssw.txt
+  tsn: /mnt/data/stopwords/tsn.txt
+  tso: /mnt/data/stopwords/tso.txt
+  ven: /mnt/data/stopwords/ven.txt
+  xho: /mnt/data/stopwords/xho.txt
+  zul: /mnt/data/stopwords/zul.txt

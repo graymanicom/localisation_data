@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Localisation Audit Quest</title>
+  <style>
+    :root {
+      --bg: #f7f3eb;
+      --card: #fffaf0;
+      --ink: #20201d;
+      --muted: #6f6658;
+      --accent: #b85c38;
+      --accent-dark: #843e27;
+      --gold: #e7b33d;
+      --green: #4a7c59;
+      --red: #b23a48;
+      --blue: #3b6ea8;
+      --line: #e7dcc9;
+      --shadow: 0 18px 40px rgba(63, 45, 25, 0.13);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(231, 179, 61, 0.20), transparent 30%),
+        radial-gradient(circle at 80% 0%, rgba(184, 92, 56, 0.18), transparent 35%),
+        linear-gradient(180deg, #f9f4ea 0%, #f2eadc 100%);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    .app-shell {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #e7b33d, #b85c38);
+      box-shadow: var(--shadow);
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+    }
+
+    h1, h2, h3 { margin: 0; }
+    h1 { font-size: clamp(1.8rem, 3.2vw, 3rem); line-height: 1.04; }
+    .subtitle { color: var(--muted); margin-top: 6px; font-size: 0.98rem; }
+
+    .button-row { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    button, .file-label, select, input, textarea {
+      font: inherit;
+    }
+
+    button, .file-label {
+      border: 0;
+      cursor: pointer;
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: white;
+      font-weight: 750;
+      box-shadow: 0 8px 20px rgba(184, 92, 56, 0.24);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    button:hover, .file-label:hover { transform: translateY(-1px); background: var(--accent-dark); }
+    button.secondary, .file-label.secondary { background: #fff; color: var(--ink); border: 1px solid var(--line); box-shadow: none; }
+    button.ghost { background: transparent; color: var(--accent-dark); box-shadow: none; border: 1px solid var(--line); }
+    button.success { background: var(--green); }
+    button.danger { background: var(--red); }
+    button.blue { background: var(--blue); }
+    button:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+
+    input[type="file"] { display: none; }
+    input[type="text"], select, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 14px;
+      padding: 12px 14px;
+      color: var(--ink);
+      outline: none;
+    }
+    textarea { min-height: 90px; resize: vertical; }
+
+    .grid { display: grid; gap: 18px; }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .card {
+      background: rgba(255, 250, 240, 0.9);
+      border: 1px solid rgba(231, 220, 201, 0.9);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .consent-box {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      margin-top: 4px;
+    }
+
+    .consent-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      line-height: 1.45;
+      margin-top: 12px;
+    }
+
+    .consent-row input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-top: 1px;
+      flex: 0 0 auto;
+      accent-color: var(--accent);
+    }
+
+    .consent-link {
+      color: var(--accent-dark);
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .hidden { display: none !important; }
+
+    .setup-card { max-width: 920px; margin: 0 auto; }
+    .section-title { margin-bottom: 14px; font-size: 1.18rem; }
+    .small { font-size: 0.9rem; color: var(--muted); }
+
+    .language-pills, .avatar-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill, .avatar-option {
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 999px;
+      padding: 10px 13px;
+      cursor: pointer;
+      user-select: none;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .pill.selected, .avatar-option.selected {
+      background: #2e2a23;
+      color: white;
+      border-color: #2e2a23;
+    }
+
+    .avatar-option { border-radius: 18px; min-width: 110px; text-align: center; }
+    .avatar-face { font-size: 34px; display: block; margin-bottom: 4px; }
+
+    .quest-layout {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .sidebar { position: sticky; top: 18px; }
+
+    .avatar-display {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .big-avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 24px;
+      background: white;
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      font-size: 40px;
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .stat-row:last-child { border-bottom: 0; }
+
+    .progress-track {
+      height: 22px;
+      background: #eee2cd;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid #ddcfb8;
+      margin: 12px 0 4px;
+      position: relative;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--gold), var(--accent));
+      border-radius: inherit;
+      transition: width 0.25s ease;
+    }
+
+    .runner {
+      position: absolute;
+      top: -8px;
+      left: 0%;
+      transform: translateX(-50%);
+      transition: left 0.25s ease;
+      font-size: 28px;
+      filter: drop-shadow(0 4px 4px rgba(0,0,0,0.18));
+    }
+
+    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .badge {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+    .badge.done { background: #fff3bf; border-color: #e7b33d; }
+
+    .sentence-card {
+      border-radius: 18px;
+      padding: 16px;
+      background: #fff;
+      border: 1px solid var(--line);
+      margin-top: 10px;
+    }
+    .sentence-label {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 850;
+      margin-bottom: 8px;
+    }
+    .sentence-text { font-size: 1.12rem; line-height: 1.55; }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0 4px;
+    }
+    .meta span {
+      background: #f4ead8;
+      color: #493d2d;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.82rem;
+      font-weight: 750;
+    }
+
+    .question-block {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+    .question-title { font-weight: 850; margin-bottom: 10px; }
+    .choice-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .choice {
+      background: white;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      box-shadow: none;
+      min-width: 90px;
+    }
+    .choice.selected.yes { background: var(--green); color: white; border-color: var(--green); }
+    .choice.selected.no { background: var(--red); color: white; border-color: var(--red); }
+    .choice.selected.neutral { background: var(--blue); color: white; border-color: var(--blue); }
+
+    .decision-card {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .decision-option {
+      border: 2px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+      background: white;
+      cursor: pointer;
+    }
+    .decision-option.selected { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(184, 92, 56, 0.12); }
+
+    .toast {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      background: #2e2a23;
+      color: white;
+      border-radius: 18px;
+      padding: 14px 16px;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: 50;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(32, 32, 29, 0.54);
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      z-index: 40;
+    }
+    .modal-content {
+      max-width: 860px;
+      max-height: 86vh;
+      overflow: auto;
+      background: var(--card);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+    }
+    .modal-content p, .modal-content li { line-height: 1.55; }
+    .example-box {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      margin: 12px 0;
+    }
+
+    .complete-screen { text-align: center; max-width: 760px; margin: 0 auto; }
+    .trophy { font-size: 80px; margin: 10px 0; }
+
+    @media (max-width: 880px) {
+      .quest-layout, .grid.two, .grid.three, .decision-card { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .topbar { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">🌍</div>
+        <div>
+          <h1>Localisation Audit Quest</h1>
+          <div class="subtitle">Help build a cleaner dataset for testing South African localisation knowledge.</div>
+        </div>
+      </div>
+      <div class="button-row">
+        <button class="secondary" id="rulesBtn">📜 Rules</button>
+        <button class="ghost hidden" id="exportBtn">⬇ Export CSV</button>
+        <button class="ghost hidden" id="resetBtn">↺ Reset</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="setupScreen" class="card setup-card grid">
+        <div>
+          <h2 class="section-title">Start your audit quest</h2>
+          <p class="small">Load the audit CSV, choose the languages you can read confidently, read and consent to the online consent form, then work through short judgement tasks. Your answers stay in your browser until you export them.</p>
+        </div>
+
+        <div class="grid two">
+          <div>
+            <label class="small" for="participantName">Your superhero/avatar name</label>
+            <input id="participantName" type="text" placeholder="e.g. batman" />
+          </div>
+          <div>
+            <label class="small" for="samplePerLang">Items per selected language</label>
+            <select id="samplePerLang">
+              <option value="all">All available</option>
+              <option value="5">5 per language</option>
+              <option value="10" selected>10 per language</option>
+              <option value="20">20 per language</option>
+              <option value="30">30 per language</option>
+              <option value="50">50 per language</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="section-title">1. Load dataset</h3>
+          <label class="file-label" for="csvInput">📁 Choose audit CSV</label>
+          <input id="csvInput" type="file" accept=".csv,text/csv" />
+          <span class="small" id="fileStatus">No file loaded yet.</span>
+        </div>
+
+        <div>
+          <h3 class="section-title">2. Choose your avatar appearance</h3>
+          <p class="small">This is only for the game interface. It is not exported as demographic information.</p>
+          <div class="avatar-grid" id="avatarGrid"></div>
+        </div>
+
+        <div>
+          <h3 class="section-title">3. Select languages you can read</h3>
+          <div class="language-pills" id="languagePills"></div>
+        </div>
+
+        <div class="consent-box">
+          <h3 class="section-title">4. Consent before you start</h3>
+          <p class="small">Before continuing, please download and read the online consent form. You may keep a copy for your records.</p>
+          <p><a class="consent-link" id="consentFormLink" href="https://stellenbosch-my.sharepoint.com/:w:/g/personal/graym_sun_ac_za/IQBeY2jLhq3bT7nbhkXbjqS-AQUhJrDykQ002Z4DhRf1SxI?e=0qyNqk" target="_blank" rel="noopener noreferrer">Open/download the online consent form</a></p>
+          <label class="consent-row" for="consentCheckbox">
+            <input id="consentCheckbox" type="checkbox" />
+            <span>I confirm that I am 18 years or older, I have read and understood the online consent form, and I voluntarily agree to take part in this study.</span>
+          </label>
+        </div>
+
+        <div class="button-row">
+          <button id="startBtn" disabled>Start quest 🚀</button>
+          <button class="secondary" id="loadProgressBtn">Load saved progress</button>
+        </div>
+      </section>
+
+      <section id="questScreen" class="quest-layout hidden">
+        <aside class="card sidebar">
+          <div class="avatar-display">
+            <div class="big-avatar" id="avatarDisplay">🧑🏾‍💻</div>
+            <div>
+              <h3 id="auditorDisplay">Auditor</h3>
+              <div class="small" id="currentLanguageDisplay">Language</div>
+            </div>
+          </div>
+
+          <div class="stat-row"><strong>Coins</strong><span id="coinDisplay">0 🪙</span></div>
+          <div class="stat-row"><strong>Stars</strong><span id="starDisplay">0 ⭐</span></div>
+          <div class="stat-row"><strong>Completed</strong><span id="completedDisplay">0 / 0</span></div>
+
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
+            <div class="runner" id="runner">🧑🏾‍💻</div>
+          </div>
+          <div class="small" id="progressText">0%</div>
+
+          <div class="badge-row" id="languageBadges"></div>
+        </aside>
+
+        <section class="card" id="questionCard">
+          <div class="button-row" style="justify-content: space-between; align-items: center;">
+            <div>
+              <h2 id="itemTitle">Audit item</h2>
+              <div class="small" id="itemSubtitle">Question details</div>
+            </div>
+            <button class="secondary" id="skipBtn">Skip</button>
+          </div>
+
+          <div class="meta" id="metaDisplay"></div>
+
+          <div class="sentence-card">
+            <div class="sentence-label">Original sentence</div>
+            <div class="sentence-text" id="originalSentence"></div>
+          </div>
+
+          <div class="question-block" id="qOriginal">
+            <div class="question-title">2.1 Is the original sentence grammatically and semantically valid?</div>
+            <div class="choice-row" data-question="original_valid">
+              <button class="choice yes" data-value="yes">Yes</button>
+              <button class="choice no" data-value="no">No</button>
+              <button class="choice neutral" data-value="unsure">Unsure</button>
+            </div>
+          </div>
+
+          <div id="swapSection">
+            <div class="sentence-card">
+              <div class="sentence-label">Rule-swapped sentence</div>
+              <div class="sentence-text" id="ruleSentence"></div>
+            </div>
+
+            <div class="question-block">
+              <div class="question-title">2.2 Is the rule-swapped sentence grammatically correct?</div>
+              <div class="choice-row" data-question="rule_grammatical">
+                <button class="choice yes" data-value="yes">Yes</button>
+                <button class="choice no" data-value="no">No</button>
+                <button class="choice neutral" data-value="unsure">Unsure</button>
+              </div>
+            </div>
+
+            <div class="question-block">
+              <div class="question-title">2.3 Is the rule-swapped sentence semantically incorrect/invalid in its South African context?</div>
+              <div class="choice-row" data-question="rule_invalid_sa_context">
+                <button class="choice yes" data-value="yes">Yes, invalid</button>
+                <button class="choice no" data-value="no">No, it still makes sense</button>
+                <button class="choice neutral" data-value="unsure">Unsure</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="llmSection" class="hidden">
+            <div class="sentence-card">
+              <div class="sentence-label">LLM-repaired swapped sentence</div>
+              <div class="sentence-text" id="llmSentence"></div>
+              <div class="small" id="llmStatus"></div>
+            </div>
+
+            <div class="question-block">
+              <div class="question-title">2.4 Is the LLM-repaired sentence grammatically correct?</div>
+              <div class="choice-row" data-question="llm_grammatical">
+                <button class="choice yes" data-value="yes">Yes</button>
+                <button class="choice no" data-value="no">No</button>
+                <button class="choice neutral" data-value="unsure">Unsure</button>
+              </div>
+            </div>
+
+            <div class="question-block">
+              <div class="question-title">2.5 Is the LLM-repaired sentence semantically incorrect/invalid in its South African context?</div>
+              <div class="choice-row" data-question="llm_invalid_sa_context">
+                <button class="choice yes" data-value="yes">Yes, invalid</button>
+                <button class="choice no" data-value="no">No, it still makes sense</button>
+                <button class="choice neutral" data-value="unsure">Unsure</button>
+              </div>
+            </div>
+
+            <div class="question-block">
+              <div class="question-title">2.6 Which version should be kept, if any?</div>
+              <div class="decision-card">
+                <div class="decision-option" data-preferred="rule">
+                  <strong>Rule-swapped</strong>
+                  <p class="small">Choose if the rule version is the better invalid example.</p>
+                </div>
+                <div class="decision-option" data-preferred="llm">
+                  <strong>LLM-repaired</strong>
+                  <p class="small">Choose if the repaired version is better.</p>
+                </div>
+                <div class="decision-option" data-preferred="neither">
+                  <strong>Neither</strong>
+                  <p class="small">Choose if both should be rejected.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="question-block">
+            <label class="question-title" for="notes">Optional notes</label>
+            <textarea id="notes" placeholder="Anything confusing, ungrammatical, or culturally/contextually important?"></textarea>
+          </div>
+
+          <div class="button-row" style="margin-top: 18px; justify-content: flex-end;">
+            <button class="secondary" id="backBtn">Back</button>
+            <button class="success" id="submitBtn">Submit answer ✨</button>
+          </div>
+        </section>
+      </section>
+
+      <section id="completeScreen" class="card complete-screen hidden">
+        <div class="trophy">🏆</div>
+        <h2>Quest complete!</h2>
+        <p>You have completed all selected audit items. Export your results and send the CSV back to the research team.</p>
+        <div class="button-row" style="justify-content: center;">
+          <button id="finalExportBtn">⬇ Export results CSV</button>
+          <button class="secondary" id="reviewBtn">Review answers</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal hidden" id="rulesModal">
+    <div class="modal-content">
+      <div class="button-row" style="justify-content: space-between; align-items: center;">
+        <h2>Audit rules</h2>
+        <button class="secondary" id="closeRulesBtn">Close</button>
+      </div>
+      <p><strong>Research context.</strong> This project studies how localisation is represented inside African-adapted language models. In this audit, localisation means whether a sentence makes sense in the South African institutional and social context.</p>
+      <p><strong>Dataset aim.</strong> We are building sentence pairs for a classifier. The original sentence should be valid. The swapped sentence should be grammatically plausible but contextually wrong because the institution or document no longer fits.</p>
+      <p><strong>Your role.</strong> You help filter out noisy signals. We do not want a classifier that only detects broken grammar or strange fragments. We want examples where the invalidity depends on local knowledge. Please do not share personal information. </p>
+      <ol>
+        <li>Judge whether the original sentence is grammatically and semantically valid.</li>
+        <li>Judge whether the rule-swapped sentence is grammatical.</li>
+        <li>Judge whether the rule-swapped sentence is invalid in its South African context.</li>
+        <li>If the rule-swapped version fails either test, judge the LLM-repaired version too.</li>
+        <li>Choose the version that should be kept: rule, LLM, or neither.</li>
+      </ol>
+      <div class="example-box">
+        <strong>Example</strong>
+        <p><em>Original:</em> Apply for an identity document at Home Affairs.</p>
+        <p><em>Swapped:</em> Apply for an identity document at SASSA.</p>
+        <p>This may be grammatically correct, but invalid in the South African context because SASSA is not the correct institution for identity documents.</p>
+      </div>
+      <p><strong>Important distinction.</strong> “Semantically invalid” here does not mean impossible in every imaginable world. It means the sentence no longer makes sense in ordinary South African public-service context.</p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const LANGUAGE_LABELS = {
+      afr: "Afrikaans",
+      nso: "Sepedi / Northern Sotho",
+      sot: "Sesotho",
+      tsn: "Setswana",
+      ssw: "siSwati",
+      ven: "Tshivenda",
+      tso: "itsonga",
+      xho: "isiXhosa",
+      zul: "isiZulu",
+      eng: "English"
+    };
+
+    const AVATARS = [
+      { id: "a1", icon: "🧑🏻‍💻", label: "Scholar 1" },
+      { id: "a2", icon: "🧑🏼‍💻", label: "Scholar 2" },
+      { id: "a3", icon: "🧑🏽‍💻", label: "Scholar 3" },
+      { id: "a4", icon: "🧑🏾‍💻", label: "Scholar 4" },
+      { id: "a5", icon: "🧑🏿‍💻", label: "Scholar 5" },
+      { id: "a6", icon: "👩🏾‍🔬", label: "Researcher" },
+      { id: "a7", icon: "👨🏾‍🏫", label: "Teacher" },
+      { id: "a8", icon: "🧕🏽", label: "Guide" },
+      { id: "a9", icon: "🧔🏿‍♂️", label: "Navigator" },
+      { id: "a10", icon: "👩🏽‍🎓", label: "Graduate" }
+    ];
+
+    const state = {
+      rows: [],
+      selectedLanguages: new Set(),
+      queue: [],
+      currentIndex: 0,
+      answers: [],
+      currentAnswer: {},
+      participantName: "",
+      avatar: AVATARS[3],
+      coins: 0,
+      stars: 0,
+      completedLanguages: new Set(),
+      fileName: "",
+      consentGiven: false
+    };
+
+    const $ = (id) => document.getElementById(id);
+
+    function showToast(message) {
+      const toast = $("toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 2200);
+    }
+
+    function parseCSV(text) {
+      const rows = [];
+      let row = [];
+      let field = "";
+      let inQuotes = false;
+
+      for (let i = 0; i < text.length; i++) {
+        const c = text[i];
+        const next = text[i + 1];
+
+        if (c === '"') {
+          if (inQuotes && next === '"') {
+            field += '"';
+            i++;
+          } else {
+            inQuotes = !inQuotes;
+          }
+        } else if (c === "," && !inQuotes) {
+          row.push(field);
+          field = "";
+        } else if ((c === "\n" || c === "\r") && !inQuotes) {
+          if (c === "\r" && next === "\n") i++;
+          row.push(field);
+          if (row.some(v => v !== "")) rows.push(row);
+          row = [];
+          field = "";
+        } else {
+          field += c;
+        }
+      }
+      row.push(field);
+      if (row.some(v => v !== "")) rows.push(row);
+
+      if (!rows.length) return [];
+      const headers = rows[0].map(h => h.trim());
+      return rows.slice(1).map(r => {
+        const obj = {};
+        headers.forEach((h, idx) => obj[h] = r[idx] ?? "");
+        return obj;
+      });
+    }
+
+    function toCSV(rows) {
+      if (!rows.length) return "";
+      const headers = Object.keys(rows[0]);
+      const esc = (v) => {
+        const s = String(v ?? "");
+        if (/[",\n\r]/.test(s)) return '"' + s.replaceAll('"', '""') + '"';
+        return s;
+      };
+      return [headers.join(","), ...rows.map(r => headers.map(h => esc(r[h])).join(","))].join("\n");
+    }
+
+    function download(filename, text) {
+      const blob = new Blob([text], { type: "text/csv;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    function shuffle(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function initAvatars() {
+      const grid = $("avatarGrid");
+      grid.innerHTML = "";
+      AVATARS.forEach(av => {
+        const el = document.createElement("div");
+        el.className = "avatar-option" + (av.id === state.avatar.id ? " selected" : "");
+        el.innerHTML = `<span class="avatar-face">${av.icon}</span><strong>${av.label}</strong>`;
+        el.addEventListener("click", () => {
+          state.avatar = av;
+          initAvatars();
+        });
+        grid.appendChild(el);
+      });
+    }
+
+    function renderLanguages() {
+      const langs = [...new Set(state.rows.map(r => r.language).filter(Boolean))].sort();
+      const box = $("languagePills");
+      box.innerHTML = "";
+      if (!langs.length) {
+        box.innerHTML = `<span class="small">Load a CSV to see available languages.</span>`;
+        return;
+      }
+      langs.forEach(lang => {
+        const count = state.rows.filter(r => r.language === lang).length;
+        const pill = document.createElement("div");
+        pill.className = "pill" + (state.selectedLanguages.has(lang) ? " selected" : "");
+        pill.textContent = `${LANGUAGE_LABELS[lang] || lang} (${count})`;
+        pill.addEventListener("click", () => {
+          if (state.selectedLanguages.has(lang)) state.selectedLanguages.delete(lang);
+          else state.selectedLanguages.add(lang);
+          renderLanguages();
+        });
+        box.appendChild(pill);
+      });
+    }
+
+    function buildQueue() {
+      const sample = $("samplePerLang").value;
+      let queue = [];
+      for (const lang of state.selectedLanguages) {
+        let rows = state.rows.filter(r => r.language === lang);
+        rows = shuffle(rows);
+        if (sample !== "all") rows = rows.slice(0, Number(sample));
+        queue.push(...rows.map(r => ({ ...r, __language: lang })));
+      }
+      return shuffle(queue);
+    }
+
+    function saveProgress() {
+      const payload = {
+        selectedLanguages: [...state.selectedLanguages],
+        queue: state.queue,
+        currentIndex: state.currentIndex,
+        answers: state.answers,
+        participantName: state.participantName,
+        avatar: state.avatar,
+        coins: state.coins,
+        stars: state.stars,
+        completedLanguages: [...state.completedLanguages],
+        fileName: state.fileName,
+        consentGiven: state.consentGiven
+      };
+      localStorage.setItem("localisationAuditQuest", JSON.stringify(payload));
+    }
+
+    function loadProgress() {
+      const raw = localStorage.getItem("localisationAuditQuest");
+      if (!raw) {
+        showToast("No saved progress found.");
+        return false;
+      }
+      const payload = JSON.parse(raw);
+      state.selectedLanguages = new Set(payload.selectedLanguages || []);
+      state.queue = payload.queue || [];
+      state.currentIndex = payload.currentIndex || 0;
+      state.answers = payload.answers || [];
+      state.participantName = payload.participantName || "Auditor";
+      state.avatar = payload.avatar || AVATARS[3];
+      state.coins = payload.coins || 0;
+      state.stars = payload.stars || 0;
+      state.completedLanguages = new Set(payload.completedLanguages || []);
+      state.fileName = payload.fileName || "";
+      state.consentGiven = !!payload.consentGiven;
+      return true;
+    }
+
+    function startQuest() {
+      state.participantName = $("participantName").value.trim();
+      state.consentGiven = $("consentCheckbox").checked;
+      if (!state.consentGiven) return showToast("Please read the consent form and tick the consent box before starting.");
+      if (!state.participantName) return showToast("Please enter your superhero or avatar name. This is used to allow you to continue with auditing at a later point.");
+      if (!state.rows.length) return showToast("Please load an audit CSV first.");
+      if (!state.selectedLanguages.size) return showToast("Please select at least one language.");
+
+      state.queue = buildQueue();
+      if (!state.queue.length) return showToast("No rows found for those languages.");
+
+      state.currentIndex = 0;
+      state.answers = [];
+      state.coins = 0;
+      state.stars = 0;
+      state.completedLanguages = new Set();
+      $("setupScreen").classList.add("hidden");
+      $("questScreen").classList.remove("hidden");
+      $("exportBtn").classList.remove("hidden");
+      $("resetBtn").classList.remove("hidden");
+      renderCurrentItem();
+      saveProgress();
+    }
+
+    function currentRow() {
+      return state.queue[state.currentIndex];
+    }
+
+    function setChoice(question, value) {
+      state.currentAnswer[question] = value;
+      document.querySelectorAll(`[data-question="${question}"] .choice`).forEach(btn => {
+        btn.classList.toggle("selected", btn.dataset.value === value);
+      });
+      updateConditionalSections();
+    }
+
+    function shouldShowLLM() {
+      const a = state.currentAnswer;
+      return a.original_valid === "yes" && (
+        a.rule_grammatical === "no" ||
+        a.rule_grammatical === "unsure" ||
+        a.rule_invalid_sa_context === "no" ||
+        a.rule_invalid_sa_context === "unsure"
+      );
+    }
+
+    function updateConditionalSections() {
+      const originalInvalid = state.currentAnswer.original_valid && state.currentAnswer.original_valid !== "yes";
+      $("swapSection").classList.toggle("hidden", originalInvalid);
+
+      const showLLM = shouldShowLLM() && hasUsableLLM(currentRow());
+      $("llmSection").classList.toggle("hidden", !showLLM);
+    }
+
+    function hasUsableLLM(row) {
+      const status = String(row.llm_repair_status || "").toLowerCase();
+      const text = String(row.llm_repaired_sentence || "").trim();
+      return text && (status === "ok" || status === "ok_contains_replacement");
+    }
+
+    function resetQuestionControls() {
+      state.currentAnswer = {};
+      document.querySelectorAll(".choice").forEach(btn => btn.classList.remove("selected"));
+      document.querySelectorAll(".decision-option").forEach(el => el.classList.remove("selected"));
+      $("notes").value = "";
+      $("llmSection").classList.add("hidden");
+      $("swapSection").classList.remove("hidden");
+    }
+
+    function renderCurrentItem() {
+      if (state.currentIndex >= state.queue.length) return showComplete();
+      resetQuestionControls();
+      const row = currentRow();
+      const langLabel = LANGUAGE_LABELS[row.language] || row.language;
+
+      $("auditorDisplay").textContent = state.participantName;
+      $("avatarDisplay").textContent = state.avatar.icon;
+      $("runner").textContent = state.avatar.icon;
+      $("currentLanguageDisplay").textContent = langLabel;
+      $("itemTitle").textContent = `Item ${state.currentIndex + 1} of ${state.queue.length}`;
+      $("itemSubtitle").textContent = `${langLabel} • ${row.kind || "kind unknown"}`;
+      $("originalSentence").textContent = row.original_sentence || "[missing original sentence]";
+      $("ruleSentence").textContent = row.rule_swapped_sentence || "[missing rule-swapped sentence]";
+      $("llmSentence").textContent = row.llm_repaired_sentence || "No LLM repair available.";
+      $("llmStatus").textContent = row.llm_repair_status ? `LLM status: ${row.llm_repair_status}` : "No LLM status.";
+
+      $("metaDisplay").innerHTML = [
+        ["Language", langLabel],
+        ["Kind", row.kind],
+        ["Original type", row.original_semantic_type],
+        ["Replacement type", row.replacement_semantic_type],
+        ["Matched", row.matched_surface],
+        ["Replacement", row.replacement_surface]
+      ].filter(([,v]) => v).map(([k,v]) => `<span>${k}: ${escapeHTML(v)}</span>`).join("");
+
+      updateProgress();
+      updateLanguageBadges();
+      saveProgress();
+    }
+
+    function escapeHTML(s) {
+      return String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+    }
+
+    function validateCurrentAnswer() {
+      const a = state.currentAnswer;
+      if (!a.original_valid) return "Please answer whether the original sentence is valid.";
+      if (a.original_valid !== "yes") return null;
+      if (!a.rule_grammatical) return "Please judge the rule-swapped sentence grammar.";
+      if (!a.rule_invalid_sa_context) return "Please judge whether the rule-swapped sentence is contextually invalid.";
+      if (shouldShowLLM() && hasUsableLLM(currentRow())) {
+        if (!a.llm_grammatical) return "Please judge the LLM-repaired sentence grammar.";
+        if (!a.llm_invalid_sa_context) return "Please judge whether the LLM-repaired sentence is contextually invalid.";
+        if (!a.preferred_version) return "Please choose rule, LLM, or neither.";
+      }
+      return null;
+    }
+
+    function submitCurrent(skip = false) {
+      const row = currentRow();
+      if (!row) return;
+
+      if (!skip) {
+        const err = validateCurrentAnswer();
+        if (err) return showToast(err);
+      }
+
+      const now = new Date().toISOString();
+      const a = state.currentAnswer;
+      const ruleKeep = a.original_valid === "yes" && a.rule_grammatical === "yes" && a.rule_invalid_sa_context === "yes";
+      const llmKeep = a.original_valid === "yes" && a.llm_grammatical === "yes" && a.llm_invalid_sa_context === "yes";
+      let inferredPreferred = a.preferred_version || "";
+      if (!inferredPreferred) inferredPreferred = ruleKeep ? "rule" : (llmKeep ? "llm" : "");
+
+      state.answers.push({
+        audit_id: row.audit_id || "",
+        pair_id: row.pair_id || "",
+        source: row.source || "",
+        language: row.language || "",
+        kind: row.kind || "",
+        original_semantic_type: row.original_semantic_type || "",
+        replacement_semantic_type: row.replacement_semantic_type || "",
+        matched_surface: row.matched_surface || "",
+        replacement_surface: row.replacement_surface || "",
+        auditor_name: state.participantName,
+        avatar_id: state.avatar.id,
+        consent_confirmed: state.consentGiven ? "yes" : "no",
+        skipped: skip ? "yes" : "no",
+        original_valid: a.original_valid || "",
+        rule_grammatical: a.rule_grammatical || "",
+        rule_invalid_sa_context: a.rule_invalid_sa_context || "",
+        llm_grammatical: a.llm_grammatical || "",
+        llm_invalid_sa_context: a.llm_invalid_sa_context || "",
+        preferred_version: inferredPreferred,
+        rule_keep_candidate: ruleKeep ? "yes" : "no",
+        llm_keep_candidate: llmKeep ? "yes" : "no",
+        notes: $("notes").value.trim(),
+        original_sentence: row.original_sentence || "",
+        rule_swapped_sentence: row.rule_swapped_sentence || "",
+        llm_repaired_sentence: row.llm_repaired_sentence || "",
+        llm_repair_status: row.llm_repair_status || "",
+        timestamp: now
+      });
+
+      if (!skip) {
+        state.coins += 10;
+        if (state.answers.length % 5 === 0) {
+          state.coins += 25;
+          showToast("Bonus! +25 coins 🪙");
+        } else {
+          showToast("Answer saved! +10 coins 🪙");
+        }
+      }
+
+      const completedLang = row.language;
+      const remainingInLang = state.queue.slice(state.currentIndex + 1).some(r => r.language === completedLang);
+      if (!remainingInLang && !state.completedLanguages.has(completedLang)) {
+        state.completedLanguages.add(completedLang);
+        state.stars += 1;
+        showToast(`Language complete! +1 star ⭐`);
+      }
+
+      state.currentIndex += 1;
+      renderCurrentItem();
+    }
+
+    function goBack() {
+      if (state.currentIndex === 0 || !state.answers.length) return;
+      state.currentIndex -= 1;
+      const last = state.answers.pop();
+      state.coins = Math.max(0, state.coins - 10);
+      renderCurrentItem();
+      showToast("Went back one item.");
+    }
+
+    function updateProgress() {
+      const total = state.queue.length || 1;
+      const completed = Math.min(state.currentIndex, total);
+      const pct = Math.round((completed / total) * 100);
+      $("coinDisplay").textContent = `${state.coins} 🪙`;
+      $("starDisplay").textContent = `${state.stars} ⭐`;
+      $("completedDisplay").textContent = `${completed} / ${total}`;
+      $("progressFill").style.width = `${pct}%`;
+      $("runner").style.left = `${pct}%`;
+      $("progressText").textContent = `${pct}% complete`;
+    }
+
+    function updateLanguageBadges() {
+      const box = $("languageBadges");
+      box.innerHTML = "";
+      for (const lang of state.selectedLanguages) {
+        const badge = document.createElement("span");
+        badge.className = "badge" + (state.completedLanguages.has(lang) ? " done" : "");
+        badge.textContent = `${LANGUAGE_LABELS[lang] || lang} ${state.completedLanguages.has(lang) ? "⭐" : ""}`;
+        box.appendChild(badge);
+      }
+    }
+
+    function showComplete() {
+      $("questScreen").classList.add("hidden");
+      $("completeScreen").classList.remove("hidden");
+      updateProgress();
+      saveProgress();
+    }
+
+    function exportResults() {
+      if (!state.answers.length) return showToast("No answers to export yet.");
+      const safeName = (state.participantName || "auditor").replace(/[^a-z0-9_-]+/gi, "_");
+      const stamp = new Date().toISOString().slice(0,19).replace(/[:T]/g, "-");
+      download(`audit_results_${safeName}_${stamp}.csv`, toCSV(state.answers));
+    }
+
+    function attachEvents() {
+      $("rulesBtn").addEventListener("click", () => $("rulesModal").classList.remove("hidden"));
+      $("closeRulesBtn").addEventListener("click", () => $("rulesModal").classList.add("hidden"));
+      $("rulesModal").addEventListener("click", (e) => { if (e.target.id === "rulesModal") $("rulesModal").classList.add("hidden"); });
+
+      $("csvInput").addEventListener("change", async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const text = await file.text();
+        const rows = parseCSV(text);
+        const required = ["audit_id", "language", "original_sentence", "rule_swapped_sentence"];
+        const missing = required.filter(c => !rows[0] || !(c in rows[0]));
+        if (missing.length) {
+          showToast(`Missing required columns: ${missing.join(", ")}`);
+          return;
+        }
+        state.rows = rows;
+        state.fileName = file.name;
+        $("fileStatus").textContent = `${file.name} loaded: ${rows.length} rows.`;
+        renderLanguages();
+        showToast("CSV loaded.");
+      });
+
+      $("consentCheckbox").addEventListener("change", () => {
+        state.consentGiven = $("consentCheckbox").checked;
+        $("startBtn").disabled = !state.consentGiven;
+        saveProgress();
+      });
+
+      $("startBtn").addEventListener("click", startQuest);
+      $("loadProgressBtn").addEventListener("click", () => {
+        if (!loadProgress()) return;
+        $("participantName").value = state.participantName;
+        $("consentCheckbox").checked = state.consentGiven;
+        $("startBtn").disabled = !state.consentGiven;
+        initAvatars();
+        $("setupScreen").classList.add("hidden");
+        $("questScreen").classList.remove("hidden");
+        $("exportBtn").classList.remove("hidden");
+        $("resetBtn").classList.remove("hidden");
+        renderCurrentItem();
+      });
+
+      document.querySelectorAll(".choice-row").forEach(row => {
+        row.addEventListener("click", e => {
+          const btn = e.target.closest("button.choice");
+          if (!btn) return;
+          setChoice(row.dataset.question, btn.dataset.value);
+        });
+      });
+
+      document.querySelectorAll(".decision-option").forEach(el => {
+        el.addEventListener("click", () => {
+          document.querySelectorAll(".decision-option").forEach(x => x.classList.remove("selected"));
+          el.classList.add("selected");
+          state.currentAnswer.preferred_version = el.dataset.preferred;
+        });
+      });
+
+      $("submitBtn").addEventListener("click", () => submitCurrent(false));
+      $("skipBtn").addEventListener("click", () => submitCurrent(true));
+      $("backBtn").addEventListener("click", goBack);
+      $("exportBtn").addEventListener("click", exportResults);
+      $("finalExportBtn").addEventListener("click", exportResults);
+      $("reviewBtn").addEventListener("click", () => {
+        state.currentIndex = Math.max(0, state.queue.length - 1);
+        $("completeScreen").classList.add("hidden");
+        $("questScreen").classList.remove("hidden");
+        renderCurrentItem();
+      });
+      $("resetBtn").addEventListener("click", () => {
+        if (!confirm("Reset local progress for this browser? Export first if you need your answers.")) return;
+        localStorage.removeItem("localisationAuditQuest");
+        location.reload();
+      });
+    }
+
+    initAvatars();
+    renderLanguages();
+    attachEvents();
+  </script>
+</body>
+</html>

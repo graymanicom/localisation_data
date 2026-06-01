@@ -1,0 +1,11 @@
+lang,n_stopwords,path
+afr,45,/mnt/data/stopwords/afr.txt
+nbl,22,/mnt/data/stopwords/nbl.txt
+nso,23,/mnt/data/stopwords/nso.txt
+sot,21,/mnt/data/stopwords/sot.txt
+ssw,22,/mnt/data/stopwords/ssw.txt
+tsn,18,/mnt/data/stopwords/tsn.txt
+tso,19,/mnt/data/stopwords/tso.txt
+ven,21,/mnt/data/stopwords/ven.txt
+xho,19,/mnt/data/stopwords/xho.txt
+zul,24,/mnt/data/stopwords/zul.txt
