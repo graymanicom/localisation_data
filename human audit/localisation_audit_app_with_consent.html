@@ -394,7 +394,7 @@
       </div>
       <div class="button-row">
         <button class="secondary" id="rulesBtn">📜 Rules</button>
-        <button class="ghost hidden" id="exportBtn">⬇ Export CSV</button>
+        <button class="ghost hidden" id="exportBtn">⬇ Export Excel</button>
         <button class="ghost hidden" id="resetBtn">↺ Reset</button>
       </div>
     </header>
@@ -590,9 +590,9 @@
       <section id="completeScreen" class="card complete-screen hidden">
         <div class="trophy">🏆</div>
         <h2>Quest complete!</h2>
-        <p>You have completed all selected audit items. Export your results and send the CSV back to the research team.</p>
+        <p>You have completed all selected audit items. Export your results and send the Excel workbook back to the research team.</p>
         <div class="button-row" style="justify-content: center;">
-          <button id="finalExportBtn">⬇ Export results CSV</button>
+          <button id="finalExportBtn">⬇ Export results Excel</button>
           <button class="secondary" id="reviewBtn">Review answers</button>
         </div>
       </section>
@@ -627,6 +627,7 @@
 
   <div class="toast" id="toast"></div>
 
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
   <script>
     const LANGUAGE_LABELS = {
       afr: "Afrikaans",
@@ -732,16 +733,46 @@
       return [headers.join(","), ...rows.map(r => headers.map(h => esc(r[h])).join(","))].join("\n");
     }
 
-    function download(filename, text) {
-      const blob = new Blob([text], { type: "text/csv;charset=utf-8" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
+    function downloadExcel(filename, rows) {
+      if (!rows.length) {
+        showToast("No answers to export yet.");
+        return;
+      }
+
+      if (typeof XLSX === "undefined") {
+        showToast("Excel export library could not be loaded. Check your internet connection and try again.");
+        return;
+      }
+
+      const worksheet = XLSX.utils.json_to_sheet(rows);
+      const workbook = XLSX.utils.book_new();
+
+      XLSX.utils.book_append_sheet(workbook, worksheet, "Audit results");
+
+      worksheet["!cols"] = Object.keys(rows[0]).map((header) => {
+        if ([
+          "original_sentence",
+          "rule_swapped_sentence",
+          "llm_repaired_sentence",
+          "notes"
+        ].includes(header)) {
+          return { wch: 55 };
+        }
+        if ([
+          "original_semantic_type",
+          "replacement_semantic_type",
+          "matched_surface",
+          "replacement_surface"
+        ].includes(header)) {
+          return { wch: 28 };
+        }
+        return { wch: Math.max(12, Math.min(24, header.length + 2)) };
+      });
+
+      XLSX.writeFile(workbook, filename, {
+        bookType: "xlsx",
+        compression: true
+      });
     }
 
     function shuffle(arr) {
@@ -1069,7 +1100,7 @@
       if (!state.answers.length) return showToast("No answers to export yet.");
       const safeName = (state.participantName || "auditor").replace(/[^a-z0-9_-]+/gi, "_");
       const stamp = new Date().toISOString().slice(0,19).replace(/[:T]/g, "-");
-      download(`audit_results_${safeName}_${stamp}.csv`, toCSV(state.answers));
+      downloadExcel(`audit_results_${safeName}_${stamp}.xlsx`, state.answers);
     }
 
     function attachEvents() {
