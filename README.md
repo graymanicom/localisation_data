@@ -6,7 +6,7 @@ The project investigates whether language models encode localisation knowledge: 
 
 The repository accompanies the paper:
 
-> False Localisation and Digital Sovereignty: A Mechanistic Analysis of African Language Models under Compute Constraint
+> Localisation and infrastructural inheritance in African language models
 
 ---
 
@@ -144,7 +144,7 @@ Both the rule-generated and repaired versions are retained for human review.
 
 ### 6. Human Audit
 
-Human annotators evaluate:
+The audit interface supports human assessment of:
 
 * validity of the original sentence
 * grammaticality of the counterfactual
@@ -152,7 +152,7 @@ Human annotators evaluate:
 * grammaticality of the repaired version
 * preference between rule-based and repaired versions
 
-Only examples judged to be grammatically acceptable and contextually inappropriate are retained in the final evaluation dataset.
+The archived dataset used in the study has no completed human-audit fields for the selected repair records. Successful language-model repair must not be interpreted as human validation of grammaticality or contextual invalidity.
 
 ---
 
@@ -163,9 +163,10 @@ localisation_data/
 ├── config/
 ├── scripts/
 ├── src/
-├── audit_app/
+├── human audit/
 ├── outputs/
-├── data/
+├── raw_data/
+├── reproducibility/
 └── README.md
 ```
 
@@ -176,13 +177,13 @@ Large datasets, intermediate artefacts, and generated outputs are excluded from 
 ## Installation
 
 ```bash
-uv sync
+uv sync --locked
 ```
 
 Optional development dependencies:
 
 ```bash
-uv sync --extra dev
+uv sync --locked --extra dev
 ```
 
 ---
@@ -216,14 +217,14 @@ uv run python scripts/add_llm_repairs.py
 Run human audit:
 
 ```text
-Open audit_app/localisation_audit_app.html
+Open "human audit/localisation_audit_app_with_consent.html"
 ```
 
 ---
 
 ## Reproducibility
 
-The repository contains all code required to reproduce:
+The repository contains implementations for:
 
 * lexicon induction
 * candidate extraction
@@ -232,7 +233,7 @@ The repository contains all code required to reproduce:
 * grammatical repair
 * audit dataset construction
 
-Raw corpora must be obtained from their original sources.
+See [reproducibility and provenance](reproducibility/README.md) for the dated archive inventory, dataset provenance and historical limitations. A repository clone does not include raw corpora, saved language-model repairs or generated results. Access to the local archives is required to verify their payloads; otherwise corpora must be obtained from their original sources. Language-model requests may produce different repairs when repeated.
 
 Generated datasets and intermediate outputs are intentionally excluded from version control.
 

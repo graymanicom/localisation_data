@@ -1,0 +1,31 @@
+{
+  "groups": {
+    "source_data": [
+      "raw_data"
+    ],
+    "construction_run": [
+      "outputs/ins_doc_filtered_replacement_capped_v2"
+    ],
+    "code_environment": [
+      "src",
+      "scripts",
+      "config",
+      "main.py",
+      "sample_substitutions.py",
+      "pyproject.toml",
+      "uv.lock"
+    ],
+    "audit_evidence": [
+      "reproducibility/private/audit_evidence"
+    ]
+  },
+  "exclusions": [
+    ".DS_Store",
+    "__pycache__",
+    ".env*",
+    "*.pem",
+    "*.key",
+    "*.token"
+  ],
+  "scope": "Local file snapshot. Historical execution-time code and checkpoint identity are recorded separately in run manifests."
+}

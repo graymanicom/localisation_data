@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "manifest_kind": "execution_record",
+  "run_id": null,
+  "recorded_at": null,
+  "executed_git_commit": null,
+  "working_tree_clean_at_execution": null,
+  "command_argv": [],
+  "parameters": {},
+  "inputs": [],
+  "checkpoint_revisions": {},
+  "environment": {
+    "python_version": null,
+    "platform": null,
+    "device": null,
+    "lockfile_sha256": null
+  },
+  "outputs": [],
+  "archive_manifest": null,
+  "completion_status": "not_started",
+  "limitations": []
+}

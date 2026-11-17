@@ -1,0 +1,7 @@
+/private/
+__pycache__/
+*.pyc
+
+# Keep historical manifests even when the parent ignores runs/.
+!/runs/
+!/runs/*.json

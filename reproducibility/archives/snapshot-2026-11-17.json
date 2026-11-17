@@ -1,0 +1,553 @@
+{
+  "schema_version": 1,
+  "release": "snapshot-2026-11-17",
+  "repository": "localisation_data",
+  "created_date": "2026-11-17",
+  "status": "Retrospective file snapshot; historical execution environment is not established",
+  "archives": [
+    {
+      "archive": "private/revision4-2026-11-17/source_data.tar.gz",
+      "sha256": "e0232fc3a73d8d44637ef0b400161736054760ea712db8e622f0d778d5c22c72",
+      "bytes": 205899217,
+      "members": [
+        {
+          "path": "raw_data/Autshumato/Afrikaans/Autshumato.BilingualCorpus(English-Afrikaans).v2.0.af.txt",
+          "bytes": 137992197,
+          "sha256": "3955c1aa36b039d2135ae689251aef61b9ac80fb2079dc34a51ad542bf181798"
+        },
+        {
+          "path": "raw_data/Autshumato/Afrikaans/Autshumato.BilingualCorpus(English-Afrikaans).v2.0.en.txt",
+          "bytes": 132465290,
+          "sha256": "32e8e0d68a47d493663f76e599de5df633df77d37e8dde2a29271dfcf0f30899"
+        },
+        {
+          "path": "raw_data/Autshumato/Sepedi/Autshumato.BilingualCorpus(English-Sepedi).v2.0.en.txt",
+          "bytes": 14043993,
+          "sha256": "6d7b117165f56c17db2ca390a067bff1d372057dbb1fb8ff9da84956d0429b73"
+        },
+        {
+          "path": "raw_data/Autshumato/Sepedi/Autshumato.BilingualCorpus(English-Sepedi).v2.0.nso.txt",
+          "bytes": 16484449,
+          "sha256": "4c9e98b1dd7dccff143556135ea8df12075b1d0f551ea59f6556c5894509171f"
+        },
+        {
+          "path": "raw_data/Autshumato/Sepedi/README.Bilingual.English-Sepedi.txt",
+          "bytes": 2387,
+          "sha256": "2dc4263ad4445c8da5787c9ad20c416d22e4ea0b6d94099057d0006f685695fc"
+        },
+        {
+          "path": "raw_data/Autshumato/Sesotho/Autshumato.BilingualCorpus(English-Sesotho).v2.0.en.txt",
+          "bytes": 17709233,
+          "sha256": "164f44d9cd305474c5b9b1b992dfc21ad99fe879e5e4cdb1d91a796d66de6289"
+        },
+        {
+          "path": "raw_data/Autshumato/Sesotho/Autshumato.BilingualCorpus(English-Sesotho).v2.0.st.txt",
+          "bytes": 19575197,
+          "sha256": "1d330d87007cf204c58b6c42cd865c4274b3784686fdca72b3a5dc358219d437"
+        },
+        {
+          "path": "raw_data/Autshumato/Setswana/Autshumato.BilingualCorpus(English-Setswana).v2.0.en.txt",
+          "bytes": 22412165,
+          "sha256": "8683e40bed1ae0bc99e40e4553e60812bdc069e5aa2bdc1eafb2bffa3c3cd6aa"
+        },
+        {
+          "path": "raw_data/Autshumato/Setswana/Autshumato.BilingualCorpus(English-Setswana).v2.0.tn.txt",
+          "bytes": 27165495,
+          "sha256": "69990d704b0f5ee5e0b87df1b298bce59c855707b298dce8c562f81867697a80"
+        },
+        {
+          "path": "raw_data/Autshumato/Setswana/README.Bilingual.English-Setswana.txt",
+          "bytes": 2392,
+          "sha256": "09829f26045c8649add6009d792182879b81a1e9b851b096612bc6d68c50455f"
+        },
+        {
+          "path": "raw_data/Autshumato/Siswati/lcontent.SADILAR.BilingualCorpus(EN-SS).1.0.3.CAM.2022-03-08.en.txt",
+          "bytes": 6493549,
+          "sha256": "ad6ebe1a354816f9f43299b2a02aba703631cc829accdb725ee7d9e1b7062c0c"
+        },
+        {
+          "path": "raw_data/Autshumato/Siswati/lcontent.SADILAR.BilingualCorpus(EN-SS).1.0.3.CAM.2022-03-08.ss.txt",
+          "bytes": 7134611,
+          "sha256": "63d564f73d5306f24610c77bf9c5d04aaa9ea19759cd1555e4253dd67da644d9"
+        },
+        {
+          "path": "raw_data/Autshumato/Siswati/lcontent.SADILAR.BilingualTranslatedCorpus(EN-SS).1.0.0.CAM.2022-02-10.en.txt",
+          "bytes": 6766876,
+          "sha256": "e9b479b5354520d7c892ca776fd9023c053ad987be3ccef0630ced2b2ab2a38c"
+        },
+        {
+          "path": "raw_data/Autshumato/Siswati/lcontent.SADILAR.BilingualTranslatedCorpus(EN-SS).1.0.0.CAM.2022-02-10.ss.txt",
+          "bytes": 7353420,
+          "sha256": "9e35ad4cb7fd0939fe44e9aa8917ce445df6039a986634e1f553e20f0e13cc1d"
+        },
+        {
+          "path": "raw_data/Autshumato/Tshivenda/lcontent.SADILAR.BilingualCorpus(EN-VE).3.0.0.CAM.2023-12-12.en.txt",
+          "bytes": 13201406,
+          "sha256": "087ced350ee67f3db023b72abb2fd5d45c0b76e6654a9995f3bb984d59328544"
+        },
+        {
+          "path": "raw_data/Autshumato/Tshivenda/lcontent.SADILAR.BilingualCorpus(EN-VE).3.0.0.CAM.2023-12-12.ve.txt",
+          "bytes": 15707292,
+          "sha256": "2b2d69e6dcdbb8505213708ff6706ac2a255ba382510dc2e52b0549b6a55dff6"
+        },
+        {
+          "path": "raw_data/Autshumato/Xitsonga/Autshumato.BilingualCorpus(English-Xitsonga).v2.0.en.txt",
+          "bytes": 12645645,
+          "sha256": "18e3b7f22dbfc143695e3481021470880a38c9bf435986eb41d25a002be4f48c"
+        },
+        {
+          "path": "raw_data/Autshumato/Xitsonga/Autshumato.BilingualCorpus(English-Xitsonga).v2.0.ts.txt",
+          "bytes": 14936483,
+          "sha256": "fb65f16e300fead5dc34a04c10945dac14fb4d0252e4da35972a16278c53be15"
+        },
+        {
+          "path": "raw_data/Autshumato/isiXhosa/BilingualCorpus.SADiLaR.English-isiXhosa.2.0.0.CAM.2025-06-10.en.txt",
+          "bytes": 10771155,
+          "sha256": "01c189f6894447156ec6e5bbfac2549ab5305d34b06eb501a17d81e3c460e04e"
+        },
+        {
+          "path": "raw_data/Autshumato/isiXhosa/BilingualCorpus.SADiLaR.English-isiXhosa.2.0.0.CAM.2025-06-10.xh.txt",
+          "bytes": 11810207,
+          "sha256": "1d1956848f7cf68d276e11f7539b428a68eac39cd566a5fbba5d77e033115c07"
+        },
+        {
+          "path": "raw_data/Autshumato/isiZulu/Autshumato.BilingualCorpus(English-Xitsonga).v2.0.en.txt",
+          "bytes": 25900231,
+          "sha256": "774c34bc5fd7d4029f5033fc5cb8e59c0863f4f8c805c2c1a98d5211a9f9c46d"
+        },
+        {
+          "path": "raw_data/Autshumato/isiZulu/Autshumato.BilingualCorpus(English-isiZulu).v2.0.zu.txt",
+          "bytes": 27382911,
+          "sha256": "e01032aabc0135a36b6a7f5974a83fcdda361e8bab2f9f7cafcb1297d2df6ff9"
+        },
+        {
+          "path": "raw_data/Autshumato/isiZulu/README.Bilingual.English-isiZulu.txt",
+          "bytes": 2390,
+          "sha256": "8ff1d3d30f6104df3e1b3a0de2fb2ae24278add83d79136009399b4ed1b7deb6"
+        }
+      ]
+    },
+    {
+      "archive": "private/revision4-2026-11-17/construction_run.tar.gz",
+      "sha256": "a0c8db9802268b0e31a97df2b7e22d1a53770bfd72002577f88a3451e7b01425",
+      "bytes": 13759140,
+      "members": [
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/audit/audit_items_llm.csv",
+          "bytes": 1734756,
+          "sha256": "eea1674fbccaea3d285d28caf6b71b00f7c31756a18dfcc5a16b37df7c17a3d8"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/audit/audit_items_llm_openai.csv",
+          "bytes": 2173606,
+          "sha256": "2e47908ed23e4cce8641bef435a8d6979a2fb6225a577ab4f7c3e83f928d3f47"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/audit/audit_items_rule.csv",
+          "bytes": 1747720,
+          "sha256": "eb016503710d2c119f999e10b333490c10794bf93b257d854975c94d56dd8f5f"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/autshumato_cluster_members.csv",
+          "bytes": 210986,
+          "sha256": "81e2c1b2139289597710e93c06852c5ee0ffafdd6feb6a06fa8a1a9f1f758064"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/autshumato_clusters.csv",
+          "bytes": 135970,
+          "sha256": "3d00c72178e07d6f4a0c252ef5a6a79107595ededfda7213fbc43d35ed272930"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/autshumato_induced.csv",
+          "bytes": 163641,
+          "sha256": "fb242e4622b0cf7535d4aee63c566d7a2bd2cd600a65650ff9d76edca051cd71"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/autshumato_stats.csv",
+          "bytes": 72516,
+          "sha256": "273add8a80884a0f9e3bd74419f3399548e0485ecdda49511f420e017c832c07"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/autshumato_swap_inventory.csv",
+          "bytes": 166268,
+          "sha256": "e13c6c0a93b880d6581f144f0c7b0547081f07d42f969979b24f6c2c4272008e"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/autshumato_top50_by_lang_kind.csv",
+          "bytes": 143858,
+          "sha256": "ea48a852e82828c92cdf69fe41d92284bbaf227f385929e2a737cacbcce841d7"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/candidates.csv",
+          "bytes": 45634198,
+          "sha256": "851d333eb4f62424628d53da60b599b0955f6db2706e7ffcb95194caa04c5fb5"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/combined.csv",
+          "bytes": 245073,
+          "sha256": "a0208962190d623d673276b17fd65821e373ba8758b02395b9eaba0f757195e0"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/comparison.csv",
+          "bytes": 135702,
+          "sha256": "b784290e6537d2294088a3dc506a3f1e47b214a4ab2d2035196ea0012e63c7bf"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/diagnostics_xho_matches.csv",
+          "bytes": 56509,
+          "sha256": "f12cfe42d1cdff58c5606c238391e2192568cf41bb7fe579d924d929178f88fa"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/seed.csv",
+          "bytes": 9175,
+          "sha256": "cb3a05823e6f7adf1fa4c746f4fcc6c185e1148afe9fbf2c1dc127cbbe5dc272"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/settings_raw.yaml",
+          "bytes": 10592,
+          "sha256": "84ae1b836eb6d8702703776c03897afeb2d54b34acefcee9135721641b932176"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/settings_resolved.yaml",
+          "bytes": 8183,
+          "sha256": "1b781ca8b80c25efacfc0c8ed24384247b2a83e0737e01ce5fa574aa6a986ff8"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/substitutions/classifier_dataset.csv",
+          "bytes": 2305912,
+          "sha256": "81581e59245ea3815099bce30790583e141262dd7a9cf7e56f27b9cdb0de48ab"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/substitutions/sample_inspection.csv",
+          "bytes": 15893,
+          "sha256": "3a4c2dc2af1eb33e5916d525ab9d6f04f4cedd8acad87ab56ce09bd9fa381da3"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/vukuzenzele_cluster_members.csv",
+          "bytes": 129951,
+          "sha256": "dc037ecf6a96afc04a2b1a09b9d5c7fe94dae081361ddc79f024da7136c01aca"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/vukuzenzele_clusters.csv",
+          "bytes": 90441,
+          "sha256": "094ab3b71623724f71d1ae347a2f7be7c4da01282e29f93f27b9c173de14164e"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/vukuzenzele_induced.csv",
+          "bytes": 99780,
+          "sha256": "8f14bfc926568440c41a6d7434bc3bb721023468af1034e2aa91c77692132403"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/vukuzenzele_stats.csv",
+          "bytes": 41038,
+          "sha256": "565f8a539ac10eaa6155b1e5c2ead28c8f9032ebdf14b72ed7f58617269999f5"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/vukuzenzele_swap_inventory.csv",
+          "bytes": 105981,
+          "sha256": "f026f2217d2381c05da5baedd5b6f3b69cc2552fae092d982923b05a65c53d4c"
+        },
+        {
+          "path": "outputs/ins_doc_filtered_replacement_capped_v2/vukuzenzele_top50_by_lang_kind.csv",
+          "bytes": 99780,
+          "sha256": "27128874d708a12cdc89f8933f0662d7d28860347fa69fe984bdd2289591fc39"
+        }
+      ]
+    },
+    {
+      "archive": "private/revision4-2026-11-17/code_environment.tar.gz",
+      "sha256": "e8bece2e671dede33cdd807999c682797f8ad6719ba94c1bcdc8475057416172",
+      "bytes": 184905,
+      "members": [
+        {
+          "path": "src/__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "src/config.py",
+          "bytes": 7696,
+          "sha256": "ce1ff0ab396732c844a61f024dcfb182de4c832052a08dec6f4c28edbfec495b"
+        },
+        {
+          "path": "src/filtering/__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "src/filtering/candidates.py",
+          "bytes": 2518,
+          "sha256": "bd58a615d1ba43d606f0cb43a58ff3d4087027c1b292f2b7a867f41739f8e95d"
+        },
+        {
+          "path": "src/filtering/llm_filter.py",
+          "bytes": 3390,
+          "sha256": "ff08f5ca176e4e81e7e588b04eafdad1aa4b470decb3ecc502f7dadb33b77ad6"
+        },
+        {
+          "path": "src/filtering/pipeline.py",
+          "bytes": 3711,
+          "sha256": "00d6758a854353495cd0d0e79cf9c08f8dbe5a0ec6c4d00e6b7680ed257e22cc"
+        },
+        {
+          "path": "src/filtering/rules.py",
+          "bytes": 4950,
+          "sha256": "832875eefad97ba0c6a7e38ef12b52479e5f431fd4b211c7313ad5bc42751aac"
+        },
+        {
+          "path": "src/ingest/__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "src/ingest/autshumato.py",
+          "bytes": 2107,
+          "sha256": "bb9637aa82257ddda7587070cf78da844a44dfc15ebc9065f6aad1dbd565a320"
+        },
+        {
+          "path": "src/ingest/vukuzenzele.py",
+          "bytes": 2757,
+          "sha256": "bbb71430f311451d80c7d45eb89c6bc355caadc412ffb5e81373600cbab59be3"
+        },
+        {
+          "path": "src/lexicon/__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "src/lexicon/clusters.py",
+          "bytes": 7977,
+          "sha256": "bff87f0f4423b0d1b898791273bc9388757ffd5fcfc5b499db7e10688b5215c4"
+        },
+        {
+          "path": "src/lexicon/induce.py",
+          "bytes": 24922,
+          "sha256": "f2882283eeb9d4857b851f2e4defac4c6c5b520787d3708176cab2a8c2a0eba2"
+        },
+        {
+          "path": "src/lexicon/nguni_documents.py",
+          "bytes": 6034,
+          "sha256": "647aa9c99a02724537417483ce8aac92a18d7ada04cedb2dc3dcb1a0f46cd144"
+        },
+        {
+          "path": "src/lexicon/schema.py",
+          "bytes": 841,
+          "sha256": "581c60a5d67ed22db54bd8a218de889a3caeecd236af49b97bb24eda20987f3b"
+        },
+        {
+          "path": "src/lexicon/swap_inventory.py",
+          "bytes": 2959,
+          "sha256": "87ee092e28ebf80d2f2e0436356dea60a3f30c16f9231af7972e9e9ab21584a0"
+        },
+        {
+          "path": "src/localisation_pipeline.egg-info/PKG-INFO",
+          "bytes": 9145,
+          "sha256": "f03484386029e1b190331cff1b42d2f8102ec3cd42e0f38a6e974497166be908"
+        },
+        {
+          "path": "src/localisation_pipeline.egg-info/SOURCES.txt",
+          "bytes": 867,
+          "sha256": "9d08725c5bfe4991b5c371e976ae7ca5225e0e034942e7d7e9f1bc3b2e5b37e2"
+        },
+        {
+          "path": "src/localisation_pipeline.egg-info/dependency_links.txt",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "path": "src/localisation_pipeline.egg-info/entry_points.txt",
+          "bytes": 51,
+          "sha256": "8de85112602ad8d0792e6ddec094177fa39915c26cd6d3888999814f1515d721"
+        },
+        {
+          "path": "src/localisation_pipeline.egg-info/requires.txt",
+          "bytes": 278,
+          "sha256": "f08c37831846f3b77892d1d6c58bb014fad286c6907977f2b4183238c3cb1c4a"
+        },
+        {
+          "path": "src/localisation_pipeline.egg-info/top_level.txt",
+          "bytes": 65,
+          "sha256": "a873f22cbddca1980479382e38dc558b73a943a68066e0a6a53a0e6d43005d43"
+        },
+        {
+          "path": "src/pipeline.py",
+          "bytes": 7939,
+          "sha256": "afccfc7e49714f95233e6a7626a850e1aea7800c5b534e340ae08daee17d0698"
+        },
+        {
+          "path": "src/swapping/generate.py",
+          "bytes": 4954,
+          "sha256": "35060f52eb7c67f3ce945d08c4aac3a5cf219149da3e9c45925ef4062e748313"
+        },
+        {
+          "path": "src/swapping/invalid_substitutions.py",
+          "bytes": 20218,
+          "sha256": "d441acdedd7a2427538ef98ad7a5bcd61b38018bc6874c7e959f7c59e1b27bc5"
+        },
+        {
+          "path": "src/swapping/matcher.py",
+          "bytes": 2653,
+          "sha256": "16d1aebb6f72f9625419713ec1273a1613a5c5ab388046eda4064921bc1a5fe9"
+        },
+        {
+          "path": "src/utils/__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "src/utils/io.py",
+          "bytes": 486,
+          "sha256": "4d374f0eb29c58f583073bfa91a17d78049b3c190dc4154560c7ea5e1b4b15d2"
+        },
+        {
+          "path": "src/utils/text.py",
+          "bytes": 4082,
+          "sha256": "f15a3292440e1c1e44f334e29ce5a9244d4b64582f01f6672d4d1510f886c09a"
+        },
+        {
+          "path": "scripts/add_llm_repairs.py",
+          "bytes": 8770,
+          "sha256": "b66dbc3c146c82021e3cefe00c89afef210980acd848b76453fc99a74c3ce0bf"
+        },
+        {
+          "path": "scripts/diagnose_xhosa_loss.py",
+          "bytes": 2641,
+          "sha256": "1c2e4d5525d8da599e3e82a99fb9ed4e1b7f9389ac3d2f631b5e3ae523cffc15"
+        },
+        {
+          "path": "scripts/prepare_audit_dataset.py",
+          "bytes": 5723,
+          "sha256": "437a943a23bb55be9eb7ef48111343db053fad69faf21f5c739a4fec7d1ac127"
+        },
+        {
+          "path": "config/seed_lexicon.yaml",
+          "bytes": 19283,
+          "sha256": "b76d0cd3f7a7e46552ba5cecf9171d8ac16b70ab45b1019c3c5738510ae4aa8d"
+        },
+        {
+          "path": "config/settings.example.yaml",
+          "bytes": 5676,
+          "sha256": "74484c4181b530f7733880b8e23a01baa5d3520928bd2e29bd5dbc61ce7a8904"
+        },
+        {
+          "path": "config/settings.yaml",
+          "bytes": 10592,
+          "sha256": "84ae1b836eb6d8702703776c03897afeb2d54b34acefcee9135721641b932176"
+        },
+        {
+          "path": "config/stopwords/afr.txt",
+          "bytes": 180,
+          "sha256": "8bf3b96f70ea0fae187c319afa6ed78d586970ba6c80c4164d5daad007edf368"
+        },
+        {
+          "path": "config/stopwords/nbl.txt",
+          "bytes": 83,
+          "sha256": "0a3892d87ada3f16f8134dc97e7aaa8b4711471938e2432c9a77ce66631de736"
+        },
+        {
+          "path": "config/stopwords/nso.txt",
+          "bytes": 73,
+          "sha256": "25230ca4139bad5a14e9297336a716ee8df51090dd3f0b544ce35bb101144879"
+        },
+        {
+          "path": "config/stopwords/settings_stopword_snippet.yaml",
+          "bytes": 366,
+          "sha256": "1d89628a6e3768d636815b0d612355b775e3c719696cb4ceb74129fcb27410fe"
+        },
+        {
+          "path": "config/stopwords/sot.txt",
+          "bytes": 65,
+          "sha256": "fd5a6dd2518d68d01ee7af54c290edfc0b3378d31508f394f1bc1d4158732b5f"
+        },
+        {
+          "path": "config/stopwords/ssw.txt",
+          "bytes": 81,
+          "sha256": "07f4409a573a6fac4871e26176ff7307020827d5ffc61e486e476fa061dc6c1d"
+        },
+        {
+          "path": "config/stopwords/stopword_summary.csv",
+          "bytes": 372,
+          "sha256": "0045c199b74241e4189f3053cf44600cec4a9bb56d2668a2c8894503673a54fd"
+        },
+        {
+          "path": "config/stopwords/tsn.txt",
+          "bytes": 61,
+          "sha256": "2132673420da007dedcbe279d39b1704181beb332d7c7af1c250f571a35ef741"
+        },
+        {
+          "path": "config/stopwords/tso.txt",
+          "bytes": 60,
+          "sha256": "4836d12927bb70b5872b2b4d84e7df70771302204e21b7abe302cf7e510ca3a7"
+        },
+        {
+          "path": "config/stopwords/ven.txt",
+          "bytes": 68,
+          "sha256": "6c4fe8bcc688099e996ed03d0ef357c952675262bc94fd1e0cd700b8c3fe6d75"
+        },
+        {
+          "path": "config/stopwords/xho.txt",
+          "bytes": 75,
+          "sha256": "e750308030dd157a92c429b9cc1da8b6d98d0fb8307fdc8a3c2d3be820de0b4c"
+        },
+        {
+          "path": "config/stopwords/zul.txt",
+          "bytes": 95,
+          "sha256": "ceaced3c9cd1b82f4b4fdcd9d9281019efe951fea880e6ad8121a8970693d78f"
+        },
+        {
+          "path": "main.py",
+          "bytes": 4743,
+          "sha256": "e29b9da4f5d19c7143e9bb0789ee7f3f4ecd002b0b91cf234cf528f7e5986560"
+        },
+        {
+          "path": "sample_substitutions.py",
+          "bytes": 1882,
+          "sha256": "a4f87c0701a984366f64ba374ee290d15661bee336c505a6517ad5d8862d4f67"
+        },
+        {
+          "path": "pyproject.toml",
+          "bytes": 766,
+          "sha256": "8c8bdb48219a47cdb0854f778eef1f18c164e27fc788fd88db764af0f6d0f871"
+        },
+        {
+          "path": "uv.lock",
+          "bytes": 424159,
+          "sha256": "b82febe537cc30ab5f243de8564d26e7bb9f380276bd6d627fb5984e47b4adf0"
+        }
+      ]
+    },
+    {
+      "archive": "private/revision4-2026-11-17/audit_evidence.tar.gz",
+      "sha256": "b72a3f9365bb9241d3980d528cd0ffd35d09c1c2999c74755c35a94001aeeacd",
+      "bytes": 2238,
+      "members": [
+        {
+          "path": "reproducibility/private/audit_evidence/code_revision_matches.csv",
+          "bytes": 3109,
+          "sha256": "3618462d8a9745743d3b03a8ef711e607f22e55f1204fa79a25a1a6a24d9d2f5"
+        },
+        {
+          "path": "reproducibility/private/audit_evidence/environment.json",
+          "bytes": 368,
+          "sha256": "60f948f194bc79beb1dcce95b15539081d16579a87527011b518fef1df0c8ca4"
+        },
+        {
+          "path": "reproducibility/private/audit_evidence/metadata_join_check.json",
+          "bytes": 162,
+          "sha256": "1a56fab5e758bfa1824c7d2f56bcdbccffea4140e023c59644369dcff52679c7"
+        },
+        {
+          "path": "reproducibility/private/audit_evidence/preparation_reconstruction.json",
+          "bytes": 371,
+          "sha256": "ef07f73b669e605ce71134848d01ae5658b209dc1a7945177535bfb9f6e9e04c"
+        },
+        {
+          "path": "reproducibility/private/audit_evidence/relevant_shell_history.txt",
+          "bytes": 3294,
+          "sha256": "2817e796ec364ed1dfa42618f502af394c971cd08b65e4e9bedd0d3e6be0b2c7"
+        }
+      ]
+    }
+  ],
+  "study": "Localisation and infrastructural inheritance in African language models"
+}

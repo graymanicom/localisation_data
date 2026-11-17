@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "manifest_kind": "historical reconstruction",
+  "recorded_on": "2026-11-17",
+  "repository_head_at_archival": "9fa0fc0495c06570b3635c980cd696371d783f59",
+  "executed_git_commit": null,
+  "working_tree_clean_at_execution": null,
+  "historical_dependency_lock_sha256": null,
+  "current_lockfile_sha256": "b82febe537cc30ab5f243de8564d26e7bb9f380276bd6d627fb5984e47b4adf0",
+  "historical_checkpoint_revisions": null,
+  "archive_manifest": "../archives/snapshot-2026-11-17.json",
+  "privacy": "Data and result payloads are held in local archives excluded from version control; access requires a separately supplied archive.",
+  "run_id": "ins_doc_filtered_replacement_capped_v2",
+  "construction_command_argv": null,
+  "construction_seed": null,
+  "construction_script": "src/pipeline.py",
+  "construction_script_sha256": "afccfc7e49714f95233e6a7626a850e1aea7800c5b534e340ae08daee17d0698",
+  "evidence": [
+    {
+      "path": "outputs/ins_doc_filtered_replacement_capped_v2/substitutions/classifier_dataset.csv",
+      "sha256": "81581e59245ea3815099bce30790583e141262dd7a9cf7e56f27b9cdb0de48ab"
+    },
+    {
+      "path": "outputs/ins_doc_filtered_replacement_capped_v2/audit/audit_items_llm_openai.csv",
+      "sha256": "2e47908ed23e4cce8641bef435a8d6979a2fb6225a577ab4f7c3e83f928d3f47"
+    },
+    {
+      "path": "outputs/ins_doc_filtered_replacement_capped_v2/candidates.csv",
+      "sha256": "851d333eb4f62424628d53da60b599b0955f6db2706e7ffcb95194caa04c5fb5"
+    },
+    {
+      "path": "outputs/ins_doc_filtered_replacement_capped_v2/settings_resolved.yaml",
+      "sha256": "1b781ca8b80c25efacfc0c8ed24384247b2a83e0737e01ce5fa574aa6a986ff8"
+    },
+    {
+      "path": "outputs/ins_doc_filtered_replacement_capped_v2/settings_raw.yaml",
+      "sha256": "84ae1b836eb6d8702703776c03897afeb2d54b34acefcee9135721641b932176"
+    }
+  ],
+  "llm_repair": {
+    "script": "scripts/add_llm_repairs.py",
+    "script_sha256": "b66dbc3c146c82021e3cefe00c89afef210980acd848b76453fc99a74c3ce0bf",
+    "saved_model_label": "gpt-4.1-mini",
+    "exact_model_snapshot": null,
+    "saved_outputs_required": true,
+    "reason": "LLM service calls cannot be assumed to reproduce identical repairs"
+  },
+  "downstream_preparation": {
+    "repository": "afroxlmr_comparison",
+    "script": "src/prepare_classifier_dataset_with_llm.py",
+    "seed": 13,
+    "balance_labels": true,
+    "sample_one_invalid_per_pair": true,
+    "upstream_classifier_rows": 4535,
+    "successful_audit_rows": 2988,
+    "selected_pairs": 1547,
+    "output_rows": 3094,
+    "reconstruction_status": "Current preparation script reproduces saved downstream CSV byte-for-byte"
+  },
+  "limitations": [
+    "Full upstream construction command not recovered",
+    "Raw data archived as found now; not proof of complete historical upstream source revisions",
+    "Human audit fields are blank in selected repair records"
+  ],
+  "study": "Localisation and infrastructural inheritance in African language models",
+  "path_conventions": {
+    "input_output_script_paths": "relative to repository root",
+    "archive_manifest": "relative to this manifest directory"
+  }
+}
